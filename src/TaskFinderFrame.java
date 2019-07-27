@@ -46,13 +46,10 @@ public class TaskFinderFrame {
 		pnlTaskFinder.setBackground(SystemColor.menu);
 		pnlTaskFinder.setBounds(210, 0, 1010, 709);
 		pnlTaskFinder.setLayout(null);
-		
-		
-		
+			
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(0, 61, 1011, 648);
 		pnlTaskFinder.add(scrollPane);
-		
 		
 		JDateChooser dateChooser = new JDateChooser();
 		dateChooser.setBounds(185, 16, 245, 29);
@@ -75,6 +72,7 @@ public class TaskFinderFrame {
 					System.out.println("Please choose a date");
 				} else {
 					DateFormat dateFormat = new SimpleDateFormat("M/d/yy");
+					// Code modified from https://stackoverflow.com/questions/7391877/how-to-add-checkboxes-to-jtable-swing
 					Object[] columnNames = {"Done", "Client", "To Do", ""};
 				    Object[][] data = frame.getDateData(dateFormat.format(dateChooser.getDate()));
 				    DefaultTableModel model = new DefaultTableModel(data, columnNames);
